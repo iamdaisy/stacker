@@ -1,0 +1,8 @@
+class CreateStackers < ActiveRecord::Migration
+  def change
+    create_table :stackers do |t|
+
+      t.timestamps null: false
+    end
+  end
+end

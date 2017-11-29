@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StackerDahye</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= link_to "[STACKER]" , root_path%>
+<%= link_to "[Tech_Stack]", techstacks_path %>
+<%= link_to "[Trend_Stack]", trendstacks_path %>
+<%= link_to "[Stackers]", stackers_path %>
+<%= yield %>
+
+</body>
+</html>

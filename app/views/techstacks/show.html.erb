@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company name:</strong>
+  <%= @techstack.company_name %>
+</p>
+
+<p>
+  <strong>Company desc:</strong>
+  <%= @techstack.company_desc %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @techstack.service %>
+</p>
+
+<%= link_to 'Edit', edit_techstack_path(@techstack) %> |
+<%= link_to 'Back', techstacks_path %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<h1>Listing Techstacks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company name</th>
+      <th>Company desc</th>
+      <th>Service</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @techstacks.each do |techstack| %>
+      <tr>
+        <td><%= techstack.company_name %></td>
+        <td><%= techstack.company_desc %></td>
+        <td><%= techstack.service %></td>
+        <td><%= link_to 'Show', techstack %></td>
+        <td><%= link_to 'Edit', edit_techstack_path(techstack) %></td>
+        <td><%= link_to 'Destroy', techstack, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Techstack', new_techstack_path %>

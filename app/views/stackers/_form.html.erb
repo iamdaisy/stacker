@@ -1,0 +1,17 @@
+<%= form_for(@stacker) do |f| %>
+  <% if @stacker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@stacker.errors.count, "error") %> prohibited this stacker from being saved:</h2>
+
+      <ul>
+      <% @stacker.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
