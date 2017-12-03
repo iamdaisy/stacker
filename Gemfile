@@ -1,9 +1,13 @@
 source 'https://rubygems.org'
 
+gem 'cancancan', '~> 2.0'
+gem 'git-trend'
+gem 'bootstrap-sass'
 gem 'devise'
 gem 'faker'
 gem 'kaminari'
-
+#internationalization
+gem 'devise-i18n'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.9'
 # Use sqlite3 as the database for Active Record
@@ -38,7 +42,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
 end
 
 group :development do
@@ -47,7 +50,9 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'rails_db'
   gem 'awesome_print'
-  gem 'pry-rails'
+  gem 'rails_db'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'omniauth-facebook'
 end

@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
-  resources :stackers
-  resources :techstacks
-
   root 'main#index'
+  get 'main/index'
 
-  get 'trendstacks' => 'trendstacks#index'
+  resources :companies
+  resources :services
+  resources :company_fields
+  resources :stacks
+  resources :stack_fields
+  #devise controller 생성했더니 이거 추가하라 했음 ㅠㅠㅠ....
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

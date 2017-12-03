@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @stack.name %>
+</p>
+
+<p>
+  <strong>Site url:</strong>
+  <%= @stack.site_url %>
+</p>
+
+<p>
+  <strong>Short describe:</strong>
+  <%= @stack.short_describe %>
+</p>
+
+<p>
+  <strong>Describe:</strong>
+  <%= @stack.describe %>
+</p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @stack.version %>
+</p>
+
+<p>
+  <strong>Stack field:</strong>
+  <%= @stack.stack_field %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @stack.user %>
+</p>
+
+<%= link_to 'Edit', edit_stack_path(@stack) %> |
+<%= link_to 'Back', stacks_path %>
