@@ -1,5 +1,5 @@
 
-<header class="bg-primary text-white">
+<header class="bg-white text-white">
   <div class="container text-center">
     <div class="justify-content-center">
       <!-- <form class="my-2 my-lg-0"> -->
@@ -7,8 +7,9 @@
         <div class="row">
           <div class="col-sm">
           <h3>원하는 스택 검색</h3>
-          <%= form_tag stacks_path, class: "justify-content-center" do%>
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <%= form_tag main_search_path, method: :get, class: "justify-content-center" do%>
+            <%= text_field_tag :search%>
+            <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search"> -->
             <%= submit_tag "검색", class: "btn btn-light my-2 my-sm-0" %>
           <% end %>
           </div>
@@ -24,11 +25,11 @@
               </tr>
             </thead>
             <tbody>
-              <% 10.times do |i|%>
+              <% @gitdata.each do |git|%>
               <tr>
-                <td><%= i+1 %></td>
-                <td><%= @name[i] %></td>
-                <td><%= @star[i] %></td>
+                <td><%= git.id %></td>
+                <td><%= git.name %></td>
+                <td><%= git.count %></td>
               </tr>
               <% end %>
             </tbody>

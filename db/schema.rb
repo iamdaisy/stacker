@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171202053241) do
+ActiveRecord::Schema.define(version: 20171204101607) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 20171202053241) do
 
   create_table "company_fields", force: :cascade do |t|
     t.string   "field"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "gittrends", force: :cascade do |t|
+    t.string   "name"
+    t.string   "year"
+    t.string   "quarter"
+    t.string   "count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

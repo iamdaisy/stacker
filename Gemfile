@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+
 gem 'cancancan', '~> 2.0'
 gem 'git-trend'
 gem 'bootstrap-sass'

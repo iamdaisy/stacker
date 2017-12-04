@@ -15,7 +15,7 @@ c_field_list.each do |field|
 end
 
 
-s_field_list = ["Language","Database","Server","Front-end","Native App",
+s_field_list = ["Language","Database","Server","Front-end","Native_App",
 "Etc"]
 s_field_list.each do |field|
   StackField.create(
@@ -24,16 +24,90 @@ s_field_list.each do |field|
 end
 
 
-# db_stack.csv test
+
 require 'csv'
 
 CSV.foreach(Rails.root.join('db_stack.csv')) do |row|
   Stack.create(
-    name: row[1],
-    site_url: row[2],
-    short_describe: row[3],
-    describe: row[4],
-    version: row[5],
-    stack_field_id: 2            #이렇게 넣는거 아닐거 같은데...어떻게 참조시킴..?
+    name: row[0].to_s.downcase,
+    site_url: row[1],
+    short_describe: row[2],
+    describe: row[3],
+    version: row[4],
+    stack_field_id: 2
   )
 end
+
+CSV.foreach(Rails.root.join('frontend_stack.csv')) do |row|
+  Stack.create(
+    name: row[0].to_s.downcase,
+    site_url: row[1],
+    short_describe: row[2],
+    describe: row[3],
+    version: row[4],
+    stack_field_id: 4
+  )
+end
+
+CSV.foreach(Rails.root.join('etc_stack.csv')) do |row|
+  Stack.create(
+    name: row[0].to_s.downcase,
+    site_url: row[1],
+    short_describe: row[2],
+    describe: row[3],
+    version: row[4],
+    stack_field_id: 6
+  )
+end
+
+CSV.foreach(Rails.root.join('language_stack.csv')) do |row|
+  Stack.create(
+    name: row[0].to_s.downcase,
+    site_url: row[1],
+    short_describe: row[2],
+    describe: row[3],
+    version: row[4],
+    stack_field_id: 1
+  )
+end
+
+
+CSV.foreach(Rails.root.join('server_stack.csv')) do |row|
+  Stack.create(
+    name: row[0].to_s.downcase,
+    site_url: row[1],
+    short_describe: row[2],
+    describe: row[3],
+    version: row[4],
+    stack_field_id: 3
+  )
+end
+
+require 'nokogiri'
+require 'json'
+require 'awesome_print'
+
+
+arr = Array.new
+File.open("gitdata.json", "r").each_line do |row|
+  arr << JSON.parse(row)
+end
+arr[0..10].each do |a|
+  Gittrend.create(
+    name: a["name"],
+    year: a["year"],
+    quarter: a["quarter"],
+    count: a["count"]
+  )
+end
+
+  CSV.foreach(Rails.root.join('app_stack.csv')) do |row|
+    Stack.create(
+      name: row[0].to_s.downcase,
+      site_url: row[1],
+      short_describe: row[2],
+      describe: row[3],
+      version: row[4],
+      stack_field_id: 5
+    )
+  end

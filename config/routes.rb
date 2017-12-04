@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
   root 'main#index'
   get 'main/index'
+  get 'main/search'
+  get 'main/mypage'
+
 
   resources :companies
   resources :services
   resources :company_fields
   resources :stacks
   resources :stack_fields
+
   #devise controller 생성했더니 이거 추가하라 했음 ㅠㅠㅠ....
   devise_for :users, controllers: {
     sessions: 'users/sessions',
