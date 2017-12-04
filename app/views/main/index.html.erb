@@ -1,18 +1,8 @@
+<br>
 
-<header class="bg-white text-white">
+<header class="bg-white text-black">
   <div class="container text-center">
     <div class="justify-content-center">
-      <!-- <form class="my-2 my-lg-0"> -->
-      <div class="container">
-        <div class="row">
-          <div class="col-sm">
-          <h3>원하는 스택 검색</h3>
-          <%= form_tag main_search_path, method: :get, class: "justify-content-center" do%>
-            <%= text_field_tag :search%>
-            <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search"> -->
-            <%= submit_tag "검색", class: "btn btn-light my-2 my-sm-0" %>
-          <% end %>
-          </div>
         <!-- </form> -->
           <div class="col-sm">
           <h3>Git 트렌드</h3>
@@ -37,8 +27,21 @@
         </div>
       </div>
     </div>
-  </div>
 </header>
+<!-- <div class="loader"><div class="page-loader"></div></div> -->
+<!-- Floating Shards icon 위치 밑으로 내리기!-->
+<!-- <img src="<%= asset_path 'shard-1-5x-3.png' %>" alt="stacker" class="shard"> -->
+<!-- Welcome Section -->
+<div class="welcome d-flex justify-content-center flex-column">
+    <div class="inner-wrapper mt-auto mb-auto">
+        <h1 class="slide-in">STACKER</h1>
+        <p class="slide-in">A modern UI toolkit for web makers.</p>
+        <div class="action-links slide-in">
+          <a href="#" class="btn btn-success btn-pill align-self-center mr-2"><i class="fa fa-download mr-1"></i>Download Now</a>
+          <a href="#" data-scroll-to="#introduction" id="scroll-to-content" class="btn btn-outline-light btn-pill align-self-center">Learn More</a>
+        </div>
+    </div>
+</div>
 
 <section id="about">
   <div class="container">
@@ -73,3 +76,24 @@
     </div>
   </div>
 </section>
+
+<!-- Inner Wrapper -->
+   <div class="inner-wrapper mt-auto mb-auto container">
+     <div class="row">
+       <div class="col-lg-5 col-md-5 col-sm-12 mt-auto mb-auto mr-3">
+           <h1 class="welcome-heading display-4 text-black">More Stack</h1>
+           <p class="text-muted">Keep your files in sync using the most secure and advanced solution to date.</p>
+           <a href="#" class="btn btn-lg btn-success btn-pill align-self-center"><i class="fa fa-download mr-2"></i>Download</a>
+
+           <div class="d-block mt-4">
+             <a href="#"><img class="w-25 mt-2 mr-3" src="<%=asset_path 'badge-apple-store.png'%>" alt="Get it on Apple Store"></a>
+             <a href="#"><img class="w-25 mt-2" src="<%=asset_path 'badge-google-play-store.png'%>" alt="Get it on Google Play Store"></a>
+           </div>
+       </div>
+
+       <div class="col-lg-4 col-md-5 col-sm-12 ml-auto">
+         <img class="iphone-mockup ml-auto" src="<%=asset_path 'iphone-app-mockup.png'%>" alt="iPhone App Mockup">
+       </div>
+     </div>
+   </div>
+</div>
